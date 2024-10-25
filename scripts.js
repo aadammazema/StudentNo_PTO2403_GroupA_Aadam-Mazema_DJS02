@@ -12,4 +12,15 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
+  // Check if inputs are numbers
+  const dividendNum = Number(dividend);
+  const dividerNum = Number(divider);
+
+  // Non-numeric input handling
+  if (isNaN(dividendNum) || isNaN(dividerNum)) {
+    console.error(new Error("Non-numeric input provided."));
+    document.body.innerHTML = "Something critical went wrong. Please reload the page";
+    return;
+  }
+
 });
