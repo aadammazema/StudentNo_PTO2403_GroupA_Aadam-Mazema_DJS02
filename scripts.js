@@ -23,4 +23,14 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
+  // Invalid division
+  if (dividerNum === 0) {
+    console.error(new Error("Division by zero attempted."));
+    result.innerText = "Division not performed. Invalid number provided. Try again";
+    return;
+  }
+
+  // Perform division and show result
+  const divisionResult = Math.floor(dividendNum / dividerNum); // Ensure whole number
+  result.innerText = divisionResult;
 });
